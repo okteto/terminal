@@ -3,7 +3,7 @@ Web-based terminal for Kubernetes development
 
 Deploy a web-based terminal in your Kubernetes cluster. The pod is already configured with the following tools:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- [Helml](https://github.com/helm/helm)
+- [Helm](https://github.com/helm/helm)
 - [Okteto](https://github.com/okteto/okteto)
 
 
