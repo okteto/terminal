@@ -1,4 +1,4 @@
-image: ramiro/terminal
+image: okteto/terminal
 port: 8080
 nameOverride: ""
 fullnameOverride: "" 
