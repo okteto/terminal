@@ -9,6 +9,8 @@ RUN mv /tmp/gotty/bin/gotty /usr/local/bin/
 
 FROM alpine:3
 
+RUN apk add bash curl iputils
+
 COPY --from=build /usr/local/bin/gotty /usr/local/bin/gotty
 COPY --from=okteto /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=okteto /usr/local/bin/okteto /usr/local/bin/okteto
@@ -18,4 +20,4 @@ ENV GOTTY_CREDENTIAL "hello:world"
 ENV HOME /okteto
 EXPOSE 8080
 ENTRYPOINT ["/usr/local/bin/gotty"]
-CMD ["--permit-write","--reconnect","/bin/sh"]
+CMD ["--permit-write","--reconnect","/bin/bash"]
