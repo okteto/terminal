@@ -11,6 +11,8 @@ FROM alpine:3
 
 RUN apk add --no-cache bash
 COPY bashrc /root/.bashrc
+RUN apk add bash curl iputils
+
 COPY --from=build /usr/local/bin/gotty /usr/local/bin/gotty
 COPY --from=okteto /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=okteto /usr/local/bin/okteto /usr/local/bin/okteto
