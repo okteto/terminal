@@ -18,7 +18,7 @@ spec:
         imagePullPolicy: IfNotPresent
         name: terminal
         env:
-          - name: GOTTY_CREDENTIAL
+          - name: TERMINAL_CREDENTIAL
             valueFrom:
               secretKeyRef:
                 name: terminal-credential

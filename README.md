@@ -10,7 +10,7 @@ Deploy a web-based terminal in your Kubernetes cluster. The pod is already confi
 # Deploy it in Okteto Cloud
 
 1. Login to [Okteto Cloud](https://cloud.okteto.com).
-1. [Create a secret](https://okteto.com/docs/secrets) called `GOTTY_CREDENTIAL` in Okteto Cloud. For the value, use the `username:password` format.
+1. [Create a secret](https://okteto.com/docs/secrets) called `TERMINAL_CREDENTIAL` in Okteto Cloud. For the value, use the `username:password` format.
 1. Deploy the helm chart: 
 
         helm install terminal -f values.yaml
