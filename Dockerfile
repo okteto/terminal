@@ -9,9 +9,8 @@ RUN mv /tmp/gotty/bin/gotty /usr/local/bin/
 
 FROM alpine:3
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash curl iputils
 COPY bashrc /root/.bashrc
-RUN apk add bash curl iputils
 
 COPY --from=build /usr/local/bin/gotty /usr/local/bin/gotty
 COPY --from=okteto /usr/local/bin/kubectl /usr/local/bin/kubectl
