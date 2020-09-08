@@ -17,7 +17,6 @@ COPY --from=okteto /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=okteto /usr/local/bin/okteto /usr/local/bin/okteto
 COPY --from=okteto /usr/local/bin/helm /usr/local/bin/helm
 
-ENV TERMINAL_CREDENTIAL "hello:world"
 ENV HOME /root
 EXPOSE 8080
-CMD ["sh", "-c", "/usr/local/bin/gotty --permit-write --reconnect --credential $TERMINAL_CREDENTIAL /bin/bash"]
+CMD ["sh", "-c", "/usr/local/bin/gotty --permit-write --reconnect /bin/bash"]
