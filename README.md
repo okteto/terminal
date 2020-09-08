@@ -10,10 +10,9 @@ Deploy a web-based terminal in your Kubernetes cluster. The pod is already confi
 # Deploy it in Okteto Cloud
 
 1. Login to [Okteto Cloud](https://cloud.okteto.com).
-1. [Create a secret](https://okteto.com/docs/secrets) called `TERMINAL_CREDENTIAL` in Okteto Cloud. For the value, use the `username:password` format.
 1. Deploy the helm chart: 
 
         helm install terminal -f values.yaml
         
 
-After deploying, go to the Okteto Cloud in your browser and click on the URL. Put your `username` and `password` to access the terminal. The terminal will have access to everything in your namespace.
+After deploying, go to the Okteto Cloud in your browser and click on the URL. You'll need to confirm your okteto identity to access the terminal. The terminal will have access to everything in your namespace.
