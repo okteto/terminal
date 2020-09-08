@@ -1,4 +1,4 @@
-FROM okteto/bin:1.1.10-cloud as okteto
+FROM okteto/cloudbin:1.8.17 as okteto
 
 FROM alpine:3 as build
 
