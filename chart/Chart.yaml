@@ -1,7 +1,7 @@
 apiVersion: v2
 name: terminal
-version: 0.1
-appVersion: 0.2
+version: 0.2
+appVersion: 0.4
 description: Web-based terminal for Kubernetes based in gotty
 type: application
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Utilities-terminal.svg/500px-Utilities-terminal.svg.png
