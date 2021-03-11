@@ -1,11 +1,22 @@
 # terminal
 Web-based terminal for Kubernetes development
 
-Deploy a web-based terminal in your Kubernetes cluster. The pod is already configured with the following tools:
+Deploy a web-based terminal in your Kubernetes cluster. 
+
+The pod is already configured with the following tools:
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - [Helm](https://github.com/helm/helm)
 - [Okteto](https://github.com/okteto/okteto)
 
+It is also configured with such `bash` aliases:
+
+        h="helm"
+        k="kubectl"
+        ke="kubectl exec -it"
+        kd="kubectl describe"
+        kl="kubectl logs"
+        ktp="watch kubectl top pods"
+        ktc="watch kubectl top pods --containers"
 
 # Deploy it in Okteto Cloud
 
