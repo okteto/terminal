@@ -11,6 +11,7 @@ FROM alpine:3
 
 RUN apk add --no-cache bash curl iputils
 COPY bashrc /root/.bashrc
+COPY bash_aliases /root/.bash_aliases
 
 COPY --from=build /usr/local/bin/gotty /usr/local/bin/gotty
 COPY --from=okteto /usr/local/bin/kubectl /usr/local/bin/kubectl
