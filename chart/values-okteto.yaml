@@ -1,4 +1,0 @@
-ingress:
-  annotations: 
-    # let okteto dynamically generate the ingress hostname
-    dev.okteto.com/generate-host: "true"

@@ -1,4 +1,5 @@
 # terminal
+
 Web-based terminal for Kubernetes development
 
 Deploy a web-based terminal in your Kubernetes cluster. 
@@ -18,12 +19,10 @@ It is also configured with such `bash` aliases:
         ktp="watch kubectl top pods"
         ktc="watch kubectl top pods --containers"
 
-# Deploy it in Okteto Cloud
+# Deploy
 
-1. Login to [Okteto Cloud](https://cloud.okteto.com).
-1. Deploy the helm chart: 
+1. Login to your Okteto instance
+2. Deploy with `okteto deploy`
 
-        helm install terminal -f values.yaml
-        
-
-After deploying, go to the Okteto Cloud in your browser and click on the URL. You'll need to confirm your okteto identity to access the terminal. The terminal will have access to everything in your namespace.
+After deploying, go to the Okteto UI in your browser and click on the URL.
+The terminal will have access to everything in your namespace.
