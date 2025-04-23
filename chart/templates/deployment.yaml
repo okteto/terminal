@@ -17,12 +17,6 @@ spec:
       - image: "{{ .Values.image }}:{{ .Chart.AppVersion }}"
         imagePullPolicy: IfNotPresent
         name: terminal
-        env:
-          - name: TERMINAL_CREDENTIAL
-            valueFrom:
-              secretKeyRef:
-                name: terminal-credential
-                key: credential
         ports:
         - containerPort: {{ .Values.port }}
           protocol: TCP

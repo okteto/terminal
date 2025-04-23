@@ -1,2 +1,2 @@
-name: terminal
-image: okteto/terminal
+deploy:
+  - helm upgrade --install terminal ./chart
