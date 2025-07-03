@@ -1,0 +1,8 @@
+name: terminal
+
+build:
+  terminal:
+    context: .
+
+deploy:
+  - helm upgrade --install terminal chart --values chart/values-okteto.yaml --set image=${OKTETO_BUILD_TERMINAL_IMAGE}
