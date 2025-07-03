@@ -38,7 +38,7 @@ kexec="./kexec"                    # Easy pod access utility
 
 ## Deploy it in Okteto
 
-1. Login to [Okteto](https://okteto.com).
+1. Login to to your Okteto instance.
 1. Deploy using the Okteto manifest: 
 
         okteto deploy --wait
