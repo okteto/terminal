@@ -1,5 +1,5 @@
 cat << EOF
-Welcome to your Kubernetes terminal. Happy coding!
+Welcome to your Okteto terminal. Happy coding!
 EOF
 
 # add Alias definitions.

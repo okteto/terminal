@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# kexec - Kubernetes exec helper script
+# Usage: kexec <deployment-name> [command]
+# If no command is provided, defaults to /bin/bash
+
+set -e
+
+# Check if deployment name is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: kexec <deployment-name> [command]"
+    echo "Example: kexec terminal"
+    echo "Example: kexec terminal ls -la"
+    exit 1
+fi
+
+DEPLOYMENT_NAME="$1"
+shift
+
+# Default command to bash if none provided
+COMMAND="${@:-/bin/bash}"
+
+# Use OKTETO_NAMESPACE if available, otherwise use current context
+NAMESPACE_FLAG=""
+if [ -n "$OKTETO_NAMESPACE" ]; then
+    NAMESPACE_FLAG="-n $OKTETO_NAMESPACE"
+fi
+
+# Check if deployment exists first
+echo "Connecting to deployment: $DEPLOYMENT_NAME"
+if ! kubectl get deployment $NAMESPACE_FLAG "$DEPLOYMENT_NAME" >/dev/null 2>&1; then
+    echo "Error: Deployment '$DEPLOYMENT_NAME' not found"
+    echo ""
+    echo "Available deployments:"
+    kubectl get deployments $NAMESPACE_FLAG -o name 2>/dev/null | sed 's/deployment.apps\///' | head -10 || echo "  (none found)"
+    exit 1
+fi
+
+echo "Command: $COMMAND"
+echo "---"
+
+# Execute the command directly on the deployment
+kubectl exec -it $NAMESPACE_FLAG deployment/"$DEPLOYMENT_NAME" -- $COMMAND

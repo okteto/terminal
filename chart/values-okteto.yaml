@@ -2,3 +2,5 @@ ingress:
   annotations: 
     # let okteto dynamically generate the ingress hostname
     dev.okteto.com/generate-host: "true"
+    # make this endpoint private (requires Okteto authentication)
+    dev.okteto.com/private: "true"
